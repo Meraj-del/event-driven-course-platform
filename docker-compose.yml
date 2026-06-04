@@ -1,0 +1,49 @@
+services:
+  course-service:
+    build: ./course-jar
+    container_name: course-service
+    ports:
+      - "8090:8090"
+    environment:
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka-kraft:9092
+    networks:
+      - course-network
+      - vboxuser_backend-network
+
+  frontend:
+    build: ./course-landing-page
+    container_name: course-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - course-service
+    networks:
+      - course-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - course-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD}
+    networks:
+      - course-network
+
+networks:
+  course-network:
+    driver: bridge
+
+  vboxuser_backend-network:
+    external: true
+    name: vboxuser_backend-network
