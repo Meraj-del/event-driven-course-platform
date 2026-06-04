@@ -291,3 +291,98 @@ This enables real-time visibility into event processing and application activity
 * OpenTelemetry Distributed Tracing
 * Prometheus Alertmanager Integration
 * Kubernetes Deployment
+
+# Learning Progression
+
+This project represents the transition from Java concurrency fundamentals to distributed event-driven systems.
+
+## Previous Foundation
+
+Before building this project, I developed a Java Multithreaded Server to understand:
+
+* Socket Programming
+* Blocking vs Concurrent Architectures
+* Thread Management
+* ExecutorService and Thread Pools
+* Load Testing with Apache JMeter
+
+Key takeaway:
+
+> Efficient concurrency requires controlled resource management. Thread pools provide predictable scalability compared to unbounded thread creation.
+
+---
+
+## Event-Driven Course Platform
+
+This project builds upon those concurrency concepts and introduces asynchronous communication using Apache Kafka.
+
+### What This Project Demonstrates
+
+* Spring Boot REST APIs
+* Apache Kafka Producers
+* Apache Kafka Consumers
+* Event-Driven Architecture
+* Docker Networking
+* Micrometer Metrics
+* Prometheus Monitoring
+* Grafana Dashboards
+* Real-Time Observability
+
+Key takeaway:
+
+> Event-driven systems decouple services and enable scalable asynchronous communication through durable event streams.
+
+---
+
+## What Came Next
+
+After understanding event-driven communication and observability, I applied these concepts to a larger production-style backend system.
+
+### Expense Tracker Microservices Platform
+
+Built using:
+
+* Spring Boot Microservices
+* API Gateway
+* JWT Authentication
+* Redis Caching
+* Apache Kafka
+* MySQL
+* Docker Compose
+* Service Discovery
+* Inter-Service Communication
+
+Focus Areas:
+
+* Distributed Systems Design
+* Secure Authentication & Authorization
+* Caching Strategies
+* Event-Driven Communication
+* Scalable Service Architecture
+* Production-Oriented Backend Development
+
+Key takeaway:
+
+> Building production-grade systems requires combining concurrency, messaging, security, caching, persistence, and observability into a cohesive architecture.
+
+---
+
+## Engineering Journey
+
+```text
+Java CLI Applications
+        │
+        ▼
+Java Multithreaded Server
+        │
+        ▼
+Event-Driven Course Platform
+        │
+        ▼
+Expense Tracker Microservices Platform
+        │
+        ▼
+Production-Style Distributed Systems
+```
+
+This progression reflects my journey from core Java development and concurrency fundamentals to modern distributed backend architectures using Spring Boot, Kafka, Redis, Docker, and Microservices.
